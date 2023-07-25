@@ -1,0 +1,27 @@
+import React from 'react';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+
+const DishDetails = ({ route, navigation }) => {
+  const { dish } = route.params;
+
+  const handleAddToFavorites = () => {
+    // Add the 'dish' to favorites (you can use similar logic as before)
+  };
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>{dish.product_name}</Text>
+      <Text style={styles.infoText}>Ingredients: {dish.ingredients_text}</Text>
+      <Text style={styles.infoText}>Drink Pairings: {dish.drink_pairings}</Text>
+      <TouchableOpacity style={styles.addToFavoritesButton} onPress={handleAddToFavorites}>
+        <Text style={styles.addToFavoritesButtonText}>Add to Favorites</Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  // ... (styles for DishDetails)
+});
+
+export default DishDetails;
