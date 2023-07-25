@@ -1,0 +1,45 @@
+import React from 'react';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+
+const ItemInfoPage = ({ item, onClose }) => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>{item.product_name}</Text>
+      <Text style={styles.infoText}>Ingredients: {item.ingredients_text}</Text>
+      <Text style={styles.infoText}>Drink Pairings: {item.drink_pairings}</Text>
+      <TouchableOpacity onPress={onClose} style={styles.closeButton}>
+        <Text style={styles.closeButtonText}>Close</Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 16,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 16,
+  },
+  infoText: {
+    fontSize: 16,
+    marginBottom: 8,
+  },
+  closeButton: {
+    marginTop: 16,
+    padding: 8,
+    backgroundColor: '#FE0000',
+    borderRadius: 8,
+  },
+  closeButtonText: {
+    color: 'white',
+    fontSize: 16,
+  },
+});
+
+export default ItemInfoPage;
