@@ -1,0 +1,34 @@
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import ResultsDish from './ResultsDish';
+import ItemInfoPage from './ItemInfoPage';
+
+const Stack = createStackNavigator();
+
+const Navigation = () => {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="ResultsDish"
+          component={ResultsDish}
+          options={{
+            title: 'Dishes',
+            headerShown: false, // Hide the default header for this screen
+          }}
+        />
+        <Stack.Screen
+          name="ItemInfoPage"
+          component={ItemInfoPage}
+          options={{
+            title: 'Item Info',
+            headerBackTitleVisible: false, // Hide the back button label
+          }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
+
+export default Navigation;
